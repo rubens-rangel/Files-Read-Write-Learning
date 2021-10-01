@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
@@ -14,13 +13,9 @@ public class application {
         int i=0;
         String[] object = null;
         
-        new File("C:\\Users\\rubens.rangel\\Desktop\\java-learning\\subdir").mkdir();              
-        
-        
-        
+        new File("C:\\Users\\rubens.rangel\\Desktop\\java-learning\\subdir").mkdir();                   
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\rubens.rangel\\Desktop\\java-learning\\subdir\\summary.csv"))){
-        	sc = new Scanner(file);   
-        	
+        	sc = new Scanner(file);       	
         	      	       	
         	while (sc.hasNextLine()) {       		
         	object = sc.nextLine().split(";");           	
@@ -34,7 +29,6 @@ public class application {
             System.out.println("File not found or can't be read");
         }
         finally {
-        	
         	if (sc != null) {
         	sc.close();
         	}
