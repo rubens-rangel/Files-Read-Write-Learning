@@ -1,25 +1,41 @@
-package Application;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Application {
+public class application {
     public static void main(String[] args) {
 
-        File file = new File("C:\\Users\\ruben\\OneDrive\\Área de Trabalho\\in.csv");
-
+        File file = new File("C:\\Users\\rubens.rangel\\Desktop\\java-learning\\in.txt");
+        Scanner sc = null;
+        int i=0;
+        String[] object = null;
+        
         try {
-            Scanner sc = new Scanner(file);
+        	sc = new Scanner(file);   
+        	
+        	
+        	
+        	
+        	while (sc.hasNextLine()) {       		
 
+        	object = sc.nextLine().split(",");        			
+        	System.out.println(Arrays.toString(object));
+        	System.out.println("objeto1:" + object[0]);
+        	System.out.println("objeto1:" + object[1]);
+        	System.out.println("objeto2:" + object[2]);
+        	i++;
+        	}
+        	
         }
         catch (IOException e){
-            System.out.println("File not Found or can't be read");
+            System.out.println("File not found or can't be read");
         }
         finally {
-
+        	if (sc != null) {
+        	sc.close();
+        	}
         }
-
     }
 }
